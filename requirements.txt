@@ -1,0 +1,5 @@
+# Python dependencies will go here
+flask
+fastapi
+reportlab
+weasyprint
