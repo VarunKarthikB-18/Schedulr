@@ -40,4 +40,4 @@ This project is licensed under the **MIT License**.
 ---
 
 ## 💡 Project Admin
-- VIkyraj Deka (Caktusuki)
+- Vikyraj Deka (Caktusuki)
