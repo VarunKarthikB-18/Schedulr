@@ -40,8 +40,4 @@ This project is licensed under the **MIT License**.
 ---
 
 ## 💡 Project Admin
-<<<<<<< HEAD
-- Your Name (@yourusername)
-=======
-- Your Name (@yourusername)  
->>>>>>> 4d33814ffb219289af04ae36596db469577ee619
+- Caktusuki
