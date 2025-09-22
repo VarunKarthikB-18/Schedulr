@@ -1,0 +1,49 @@
+name: Bug report
+description: Use this template to report a bug or issue.
+title: "[BUG]"
+labels: bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out a bug report! Please provide as much detail as possible.
+
+  - type: input
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Describe the steps to reproduce the issue
+      placeholder: "1. Go to '...'\n2. Click on '...'\n3. See error"
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+      placeholder: "The feature should do XYZ."
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual behavior
+      description: What actually happened instead?
+      placeholder: "The feature crashes unexpectedly."
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment details
+      description: Browser, OS, device, or other relevant environment info
+      placeholder: "e.g., Chrome 105, Windows 10, Mobile iPhone 12"
+      required: false
+
+  - type: textarea
+    id: additional-information
+    attributes:
+      label: Additional information
+      description: Any other information or screenshots that might help
+      placeholder: "Logs, screenshots, or anything else"
+      required: false
