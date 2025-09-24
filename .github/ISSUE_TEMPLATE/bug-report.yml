@@ -1,54 +1,24 @@
-name: Bug report
-description: Use this template to report a bug or issue.
-title: "[BUG]"
-labels: ["bug"]
-body:
-  - type: markdown
-    attributes:
-      value: |
-        Thanks for taking the time to file a bug report! Please fill out the following as completely as you can.
+---
+name: "🐞 Bug Report"
+about: Report a bug or problem
+title: "[BUG] "
+labels: bug
+---
 
-  - type: input
-    id: steps-to-reproduce
-    attributes:
-      label: Steps to reproduce
-      description: List the steps to reproduce the issue
-      placeholder: "1. Go to '...'\n2. Click on '...'\n3. See error"
-    validations:
-      required: true
+## What happened?
+Write in a few words what went wrong.
 
-  - type: textarea
-    id: expected-behavior
-    attributes:
-      label: Expected behavior
-      description: What you expected to happen
-      placeholder: "The application should..."
-    validations:
-      required: true
+## How to see it happen
+Steps to check the problem:
+1. Go to ...
+2. Click ...
+3. See the problem
 
-  - type: textarea
-    id: actual-behavior
-    attributes:
-      label: Actual behavior
-      description: What actually happened
-      placeholder: "The application crashed..."
-    validations:
-      required: true
+## What you expected
+What should have happened?
 
-  - type: input
-    id: environment
-    attributes:
-      label: Environment (browser, OS, device)
-      description: Describe the environment where this happens
-      placeholder: "e.g., Chrome 95, Windows 10, iPhone 12"
-    validations:
-      required: false
+## Screenshot (if possible)
+Drag and drop a picture if it helps explain the problem.
 
-  - type: textarea
-    id: additional-information
-    attributes:
-      label: Additional information
-      description: Any other details, logs, or screenshots
-      placeholder: "Include links to logs or screenshots"
-    validations:
-      required: false
+## Anything else to tell us?
+Add any extra info, like which device or browser you used.
