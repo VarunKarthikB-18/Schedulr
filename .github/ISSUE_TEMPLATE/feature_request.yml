@@ -1,7 +1,9 @@
 name: Feature Request
 description: Suggest a new feature or improvement for this project.
 title: "[Feature] "
-labels: enhancement
+labels: 
+  - enhancement
+  - Gssoc
 body:
   - type: textarea
     id: feature_description
