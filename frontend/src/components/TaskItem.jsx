@@ -1,4 +1,4 @@
-export default function TaskItem({ task }) {
+export default function TaskItem({ task, onShowDetails, onDelete }) {
   const getPriorityConfig = (priority) => {
     switch (priority) {
       case 'high':
@@ -50,33 +50,89 @@ export default function TaskItem({ task }) {
 
   const urgency = getUrgencyIndicator(daysUntilDeadline);
 
+  // Get recurrence info for display
+  const getRecurrenceInfo = (task) => {
+    if (!task.isRecurring && !task.isInstance) return null;
+    
+    if (task.isInstance) {
+      // This is an instance of a recurring task
+      return {
+        icon: '🔄',
+        text: 'Recurring Task Instance',
+        color: 'bg-blue-100 text-blue-800 border-blue-200'
+      };
+    }
+    
+    if (task.isRecurring && task.recurrence) {
+      const { type, interval } = task.recurrence;
+      let text = '';
+      
+      if (interval === 1) {
+        text = `Every ${type}`;
+      } else {
+        text = `Every ${interval} ${type}${interval > 1 ? 's' : ''}`;
+      }
+      
+      return {
+        icon: '🔄',
+        text: text,
+        color: 'bg-blue-100 text-blue-800 border-blue-200'
+      };
+    }
+    
+    return null;
+  };
+
+  const recurrenceInfo = getRecurrenceInfo(task);
+
   return (
-    <div className={`bg-white rounded-lg shadow-md p-4 border-l-4 ${priorityConfig.borderColor} transition hover:scale-[1.02] hover:shadow-lg`}>
+    <div className={`bg-white rounded-lg shadow-md p-4 border-l-4 ${priorityConfig.borderColor} transition hover:scale-[1.02] hover:shadow-lg ${task.isInstance ? 'bg-gradient-to-r from-blue-50 to-white' : ''}`}>
       <div className="flex justify-between items-start">
         <div className="flex-1">
-          <div className="flex items-center gap-3 mb-2">
+          <div className="flex items-center gap-2 mb-2 flex-wrap">
             <span className="text-lg font-semibold text-blue-700">{task.name}</span>
             <span className={`px-2 py-1 rounded-full text-xs font-medium border ${priorityConfig.color}`}>
               {priorityConfig.icon} {priorityConfig.label}
             </span>
+            {recurrenceInfo && (
+              <span className={`px-2 py-1 rounded-full text-xs font-medium border ${recurrenceInfo.color}`}>
+                {recurrenceInfo.icon} {recurrenceInfo.text}
+              </span>
+            )}
           </div>
           
-          <div className="flex items-center gap-4 text-sm">
+          <div className="flex items-center gap-4 text-sm flex-wrap">
             <div className="text-gray-600">
-              📅 Deadline: {new Date(task.deadline).toLocaleDateString()}
+              📅 {task.isRecurring && !task.isInstance ? 'Starts:' : 'Due:'} {new Date(task.deadline).toLocaleDateString()}
             </div>
             <div className={urgency.color}>
               ⏰ {urgency.text}
             </div>
+            {task.isRecurring && task.recurrence?.endDate && (
+              <div className="text-gray-500 text-xs">
+                🏁 Ends: {new Date(task.recurrence.endDate).toLocaleDateString()}
+              </div>
+            )}
           </div>
         </div>
         
         <div className="flex items-center gap-2">
-          <button className="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-xs transition">
+          {task.isInstance && (
+            <span className="text-xs text-blue-600 font-medium px-2 py-1 bg-blue-50 rounded">
+              Instance
+            </span>
+          )}
+          <button 
+            onClick={() => onShowDetails?.(task)}
+            className="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-xs transition"
+          >
             Details
           </button>
-          <button className="px-3 py-1 bg-gray-100 text-gray-700 rounded hover:bg-gray-200 text-xs transition">
-            Edit
+          <button 
+            onClick={() => onDelete?.(task)}
+            className="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 text-xs transition"
+          >
+            Delete
           </button>
         </div>
       </div>
