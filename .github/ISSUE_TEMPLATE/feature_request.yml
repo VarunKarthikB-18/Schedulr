@@ -6,8 +6,8 @@ body:
     id: feature_description
     attributes:
       label: What is the feature?
-      description: Briefly describe the feature you want.
-      placeholder: "Add a dark mode option for the app."
+      description: Briefly describe the feature you want to add.
+      placeholder: "Example: Add a dark mode option for the app."
     validations:
       required: true
 
@@ -15,25 +15,25 @@ body:
     id: why_needed
     attributes:
       label: Why is this feature needed?
-      description: Explain why this would be useful.
-      placeholder: "Dark mode helps users use the app at night."
+      description: Explain why this feature would be useful.
+      placeholder: "Example: Dark mode helps users use the app at night."
     validations:
       required: true
 
   - type: textarea
     id: screenshots
     attributes:
-      label: Screenshots (optional)
-      description: Add a screenshot or mockup if it helps explain the feature.
-      placeholder: "Add image here."
+      label: Screenshots or mockups (optional)
+      description: Upload a screenshot or drawing if it helps explain your feature.
+      placeholder: "Drag and drop an image here."
     validations:
       required: false
 
   - type: textarea
     id: additional_info
     attributes:
-      label: Anything else?
-      description: Add extra notes or details if needed.
-      placeholder: "Extra info, references, or ideas."
+      label: Additional notes (optional)
+      description: Any extra info, links, or context.
+      placeholder: "Example: Related issues or ideas."
     validations:
       required: false
