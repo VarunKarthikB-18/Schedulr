@@ -6,11 +6,15 @@ needs-screenshot:
 
 # Enhancement / feature improvement
 enhancement:
-  - any: ['features/**', 'src/feature/**', 'src/components/**']
+  - any: ['features/**', 'src/feature/**', 'src/components/**', 'src/**/feature*', '**/feature*']
 
 # Development files
 Development:
   - any: ['**/src/**', '**/frontend/**', '**/backend/**', '**/components/**']
+
+# Level 1 = basic tasks
+"Level 1":
+  - any: ['**/level1/**', '**/Level1/**']
 
 # Level 2 = all enhancements  
 "Level 2":
@@ -22,25 +26,25 @@ major-work:
 
 # Level 3 = all major work
 "Level 3":
-  - any: ['src/core/**', 'server/**', 'api/**']
+  - any: ['src/core/**', 'server/**', 'api/**', '**/level3/**', '**/Level3/**']
 
 # Documentation changes
 documentation:
-  - any: ['**/*.md', 'docs/**']
+  - any: ['**/*.md', 'docs/**', '**/docs/**']
 
 # Bug-related paths
 bug:
-  - any: ['**/bug/**', '**/bugs/**']
+  - any: ['**/bug/**', '**/bugs/**', 'src/**/bug*', '**/bug*']
 
 # Other labels
 duplicate:
   - any: ['**/duplicate/**']
 
 "good first issue":
-  - any: ['**/good-first-issue/**']
+  - any: ['**/good-first-issue/**', 'good-first-issue/**']
 
 "help wanted":
-  - any: ['**/help-wanted/**']
+  - any: ['**/help-wanted/**', 'help-wanted/**']
 
 invalid:
   - any: ['**/invalid/**']
