@@ -1,4 +1,5 @@
 name: Bug Report
+description: File a bug report if something isn't working as expected.
 title: "[BUG] "
 labels: bug
 body:
@@ -6,7 +7,7 @@ body:
     id: describe_bug
     attributes:
       label: "Describe the bug"
-      description: "Tell us what you saw. This will be shown as a hint."
+      description: "Clearly describe what went wrong."
       placeholder: "When I clicked login, the app crashed."
     validations:
       required: true
@@ -14,17 +15,20 @@ body:
   - type: textarea
     id: steps
     attributes:
-      label: How to see it happen
-      description: Write the steps so we can repeat the bug.
-      placeholder: "1. Open app\n2. Click login\n3. See error"
+      label: "Steps to reproduce"
+      description: "List the steps to reproduce the bug."
+      placeholder: |
+        1. Open app
+        2. Click login
+        3. See error
     validations:
       required: true
 
   - type: textarea
     id: expected
     attributes:
-      label: What you expected
-      description: What should have happened instead?
+      label: "Expected behavior"
+      description: "What did you expect to happen?"
       placeholder: "The page should load normally."
     validations:
       required: false
@@ -32,8 +36,13 @@ body:
   - type: textarea
     id: screenshot
     attributes:
-      label: Screenshot (optional)
-      description: Add a screenshot if it helps show the problem.
+      label: "Screenshot (optional)"
+      description: "Add a screenshot if it helps explain the problem."
       placeholder: "Drag and drop an image here."
     validations:
       required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting this issue! We'll look into it as soon as possible.
