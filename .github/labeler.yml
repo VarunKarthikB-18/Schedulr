@@ -1,35 +1,108 @@
-bug:
-  - any: ['**/bug/**', '**/bugs/**']
-    
-documentation:
-  - any: ['**/*.md', '**/docs/**', '**/documentation/**']
-    
-duplicate:
-  - any: ['**/duplicate/**']
-    
+# --- PR Rules ---
+
+# UI-related files → needs-screenshot
+needs-screenshot:
+  - '**/*.css'
+  - '**/*.scss'
+  - '**/*.js'
+  - '**/*.jsx'
+  - '**/*.ts'
+  - '**/*.tsx'
+  - '**/*.html'
+
+# Enhancement / feature improvement
 enhancement:
-  - any: ['**/enhancement/**', '**/features/**']
-    
-"good first issue":
-  - any: ['**/good-first-issue/**']
-    
-"GSSoC'25":
-  - any: ['**/*gssoc*/**', '**/*GSSoC*/**']
-    
-"help wanted":
-  - any: ['**/help-wanted/**']
-    
-invalid:
-  - any: ['**/invalid/**']
-    
-"Level 3":
-  - any: ['**/level3/**', '**/Level3/**']
-    
-question:
-  - any: ['**/question/**', '**/questions/**']
-    
-wontfix:
-  - any: ['**/wontfix/**']
-    
+  - 'features/**'
+  - 'src/feature/**'
+  - 'src/components/**'
+  - '**/enhancement/**'
+  - '**/features/**'
+
+# Development files
 Development:
-  - any: ['**/src/**', '**/frontend/**', '**/backend/**', '**/components/**']
+  - '**/src/**'
+  - '**/frontend/**'
+  - '**/backend/**'
+  - '**/components/**'
+
+# Level 2 = all enhancements
+Level 2:
+  - 'features/**'
+  - 'src/feature/**'
+  - 'src/components/**'
+
+# Major work / new features
+major-work:
+  - 'src/core/**'
+  - 'server/**'
+  - 'api/**'
+
+# Level 3 = all major work
+Level 3:
+  - 'src/core/**'
+  - 'server/**'
+  - 'api/**'
+  - '**/level3/**'
+  - '**/Level3/**'
+
+# Documentation changes
+documentation:
+  - '**/*.md'
+  - 'docs/**'
+  - '**/docs/**'
+  - '**/documentation/**'
+
+# Bug-related paths
+bug:
+  - '**/bug/**'
+  - '**/bugs/**'
+
+# Other labels
+duplicate:
+  - '**/duplicate/**'
+
+"good first issue":
+  - '**/good-first-issue/**'
+
+"help wanted":
+  - '**/help-wanted/**'
+
+invalid:
+  - '**/invalid/**'
+
+question:
+  - '**/question/**'
+  - '**/questions/**'
+
+wontfix:
+  - '**/wontfix/**'
+
+# GSSoC applied to all PRs and issues
+"GSSoC'25":
+  - '**/*'
+
+# --- Issue Rules ---
+
+# Bug reports → bug
+bug:
+  - 'issues: ["(?i)^\\[BUG\\]"]'
+
+# Feature requests → enhancement
+enhancement:
+  - 'issues: ["(?i)^\\[Feature\\]"]'
+
+# Questions
+question:
+  - 'issues: ["(?i)^\\[Question\\]"]'
+
+# Documentation issues
+documentation:
+  - 'issues: ["(?i)\\[docs?\\]"]'
+
+# Invalid
+invalid:
+  - 'issues: ["(?i)\\[Invalid\\]"]'
+
+# GSSoC applied to all issues
+"GSSoC'25":
+  - 'issues: ["^.*$"]'
