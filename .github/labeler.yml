@@ -1,80 +1,19 @@
-# for Keywords and other
 bug:
-  any: 
-    - "src/**/bug*"
-    - "**/bug*"
-  keywords:
-    - "bug"
-    - "crash"
-    - "error"
-    - "not working"
+  - "src/**/bug*"
+  - "**/bug*"
 
 documentation:
-  any: 
-    - "docs/**"
-    - "**/*.md"
-  keywords:
-    - "documentation"
-    - "docs"
-    - "readme"
+  - "docs/**"
+  - "**/*.md"
 
 enhancement:
-  any: 
-    - "src/**/feature*"
-    - "**/feature*"
-  keywords:
-    - "feature"
-    - "enhancement"
-    - "improve"
-    - "add"
+  - "src/**/feature*"
+  - "**/feature*"
 
 good first issue:
-  any: 
-    - "good-first-issue/**"
-    - "**/good-first-issue*"
-  keywords:
-    - "good first issue"
-    - "beginner"
-    - "easy"
+  - "good-first-issue/**"
+  - "**/good-first-issue*"
 
 help wanted:
-  any: 
-    - "help-wanted/**"
-    - "**/help-wanted*"
-  keywords:
-    - "help"
-    - "support"
-    - "wanted"
-
-invalid:
-  keywords:
-    - "invalid"
-    - "not valid"
-
-question:
-  keywords:
-    - "question"
-    - "how"
-    - "what"
-
-duplicate:
-  keywords:
-    - "duplicate"
-    - "already exists"
-
-Level 1:
-  keywords:
-    - "level 1"
-
-Level 2:
-  keywords:
-    - "level 2"
-
-Level3:
-  keywords:
-    - "level 3"
-
-wontfix:
-  keywords:
-    - "wontfix"
-    - "will not fix"
+  - "help-wanted/**"
+  - "**/help-wanted*"
