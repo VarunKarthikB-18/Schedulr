@@ -8,20 +8,20 @@ on:
 
 jobs:
   pr-labeler:
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/labeler@v5
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-      # Always add 'GSSoC'25' to PRs
       - name: Add GSSoC'25 label to PR
-        if: github.event_name == 'pull_request'
         uses: actions-ecosystem/action-add-labels@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           labels: "GSSoC'25"
 
   issue-labeler:
+    if: github.event_name == 'issues'
     runs-on: ubuntu-latest
     steps:
       - uses: github/issue-labeler@v3.2
@@ -32,7 +32,6 @@ jobs:
           enable-versioned-regex: true
       # Always add 'GSSoC'25' to Issues
       - name: Add GSSoC'25 label to Issue
-        if: github.event_name == 'issues'
         uses: actions-ecosystem/action-add-labels@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
