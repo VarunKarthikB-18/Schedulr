@@ -1,19 +1,19 @@
-bug:
+"bug":
   - "src/**/bug*"
   - "**/bug*"
 
-documentation:
+"documentation":
   - "docs/**"
   - "**/*.md"
 
-enhancement:
+"enhancement":
   - "src/**/feature*"
   - "**/feature*"
 
-good first issue:
+"good first issue":
   - "good-first-issue/**"
   - "**/good-first-issue*"
 
-help wanted:
+"help wanted":
   - "help-wanted/**"
   - "**/help-wanted*"
