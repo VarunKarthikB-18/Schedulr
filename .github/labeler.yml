@@ -1,24 +1,52 @@
-bug:
-  - 'bug'
+# --- Pull Request Rules ---
+
+# Add "needs-screenshot" if UI-related files are changed
+needs-screenshot:
+  - '**/*.css'
+  - '**/*.scss'
+  - '**/*.js'
+  - '**/*.jsx'
+  - '**/*.ts'
+  - '**/*.tsx'
+  - '**/*.html'
+
+# Add "documentation" if docs are changed
 documentation:
   - '**/*.md'
-duplicate:
-  - 'duplicate'
+  - 'docs/**'
+
+# Add "enhancement" if feature code is touched
 enhancement:
-  - 'enhancement'
+  - 'features/**'
+  - 'src/feature/**'
+
+# Mark as "good first issue" if beginner-friendly files are touched
 good first issue:
-  - 'good first issue'
-GSSoC25:
-  - "GSSoC'25"
-help wanted:
-  - 'help wanted'
-invalid:
-  - 'invalid'
-Level3:
-  - 'Level 3'
+  - 'examples/**'
+  - 'tutorials/**'
+
+# Apply "GSSoC'25" if contributions are in GSSoC scope
+"GSSoC'25":
+  - 'gssoc/**'
+
+# --- Issue Rules ---
+
+# Bug reports (title starts with [BUG])
+bug:
+  - 'issues: ["^\\[BUG\\]"]'
+
+# Feature requests (title starts with [Feature])
+enhancement:
+  - 'issues: ["^\\[Feature\\]"]'
+
+# Documentation requests (title contains [Docs] or [Doc])
+documentation:
+  - 'issues: ["(?i)\\[docs?\\]"]'
+
+# Questions (title starts with [Question])
 question:
-  - 'question'
-wontfix:
-  - 'wontfix'
-Development:
-  - 'development'
+  - 'issues: ["^\\[Question\\]"]'
+
+# Mark invalid if title contains [Invalid]
+invalid:
+  - 'issues: ["\\[Invalid\\]"]'
