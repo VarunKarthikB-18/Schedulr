@@ -1,19 +1,54 @@
-"bug":
-  - "src/**/bug*"
-  - "**/bug*"
+# For Pull Requests: label by file pattern
+bug:
+  - any: ["src/**/bug*", "**/bug*"]
+documentation:
+  - any: ["docs/**", "**/*.md"]
+enhancement:
+  - any: ["src/**/feature*", "**/feature*"]
+good first issue:
+  - any: ["good-first-issue/**", "**/good-first-issue*"]
+help wanted:
+  - any: ["help-wanted/**", "**/help-wanted*"]
 
-"documentation":
-  - "docs/**"
-  - "**/*.md"
-
-"enhancement":
-  - "src/**/feature*"
-  - "**/feature*"
-
-"good first issue":
-  - "good-first-issue/**"
-  - "**/good-first-issue*"
-
-"help wanted":
-  - "help-wanted/**"
-  - "**/help-wanted*"
+# For Issues: label by keyword in title/body
+bug:
+  - "bug"
+  - "crash"
+  - "error"
+  - "not working"
+documentation:
+  - "documentation"
+  - "docs"
+  - "readme"
+enhancement:
+  - "feature"
+  - "enhancement"
+  - "improve"
+  - "add"
+good first issue:
+  - "good first issue"
+  - "beginner"
+  - "easy"
+help wanted:
+  - "help"
+  - "support"
+  - "wanted"
+invalid:
+  - "invalid"
+  - "not valid"
+question:
+  - "question"
+  - "how"
+  - "what"
+duplicate:
+  - "duplicate"
+  - "already exists"
+Level 1:
+  - "level 1"
+Level 2:
+  - "level 2"
+Level3:
+  - "level 3"
+wontfix:
+  - "wontfix"
+  - "will not fix"
