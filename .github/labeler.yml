@@ -1,24 +1,35 @@
 bug:
-  - 'bug'
+  - any: ['**/bug/**', '**/bugs/**']
+    
 documentation:
-  - '**/*.md'
+  - any: ['**/*.md', '**/docs/**', '**/documentation/**']
+    
 duplicate:
-  - 'duplicate'
+  - any: ['**/duplicate/**']
+    
 enhancement:
-  - 'enhancement'
-good first issue:
-  - 'good first issue'
-GSSoC25:
-  - "GSSoC'25"
-help wanted:
-  - 'help wanted'
+  - any: ['**/enhancement/**', '**/features/**']
+    
+"good first issue":
+  - any: ['**/good-first-issue/**']
+    
+"GSSoC'25":
+  - any: ['**/*gssoc*/**', '**/*GSSoC*/**']
+    
+"help wanted":
+  - any: ['**/help-wanted/**']
+    
 invalid:
-  - 'invalid'
-Level3:
-  - 'Level 3'
+  - any: ['**/invalid/**']
+    
+"Level 3":
+  - any: ['**/level3/**', '**/Level3/**']
+    
 question:
-  - 'question'
+  - any: ['**/question/**', '**/questions/**']
+    
 wontfix:
-  - 'wontfix'
+  - any: ['**/wontfix/**']
+    
 Development:
-  - 'development'
+  - any: ['**/src/**', '**/frontend/**', '**/backend/**', '**/components/**']
