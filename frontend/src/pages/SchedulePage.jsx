@@ -59,11 +59,11 @@ export default function SchedulePage() {
   };
 
   const generateReport = () => {
-    let report = "📅 Daily Tasks:\n";
+    let report = " Daily Tasks:\n";
     if (dailyTasks.length === 0) report += "No tasks.\n";
     else report += dailyTasks.map(t => `${t.time} - ${t.task}`).join("\n") + "\n";
 
-    report += "\n📆 Weekly Tasks:\n";
+    report += "\n Weekly Tasks:\n";
     for (const day in weeklyTasks) {
       report += `${day}:\n`;
       if (weeklyTasks[day].length === 0) report += "  No tasks\n";
@@ -75,7 +75,7 @@ export default function SchedulePage() {
 
   return (
     <div className="max-w-4xl mx-auto p-4">
-      <h1 className="text-2xl font-semibold mb-6">📅 Schedule</h1>
+      <h1 className="text-2xl font-semibold mb-6"> Schedule</h1>
       <Tabs view={view} setView={setView} />
 
       {view === "daily" ? (
@@ -171,6 +171,7 @@ export default function SchedulePage() {
     </div>
   );
 }
+
 
 
 
