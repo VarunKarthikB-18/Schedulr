@@ -1,6 +1,6 @@
 # --- Pull Request Rules ---
 
-# Add "needs-screenshot" if UI-related files are changed
+# Screenshot reminder for UI-related changes
 needs-screenshot:
   - '**/*.css'
   - '**/*.scss'
@@ -10,24 +10,29 @@ needs-screenshot:
   - '**/*.tsx'
   - '**/*.html'
 
-# Add "documentation" if docs are changed
+# Documentation changes
 documentation:
   - '**/*.md'
   - 'docs/**'
 
-# Add "enhancement" if feature code is touched
+# Enhancements / feature improvements
 enhancement:
   - 'features/**'
   - 'src/feature/**'
 
-# Mark as "good first issue" if beginner-friendly files are touched
-good first issue:
-  - 'examples/**'
-  - 'tutorials/**'
+# Major work / new features
+major-work:
+  - 'src/core/**'
+  - 'server/**'
+  - 'api/**'
 
-# Apply "GSSoC'25" if contributions are in GSSoC scope
-"GSSoC'25":
-  - 'gssoc/**'
+# Assign levels based on type of work
+Level 1:
+  - 'pull_request:labels:documentation'
+Level 2:
+  - 'pull_request:labels:enhancement'
+Level 3:
+  - 'pull_request:labels:major-work'
 
 # --- Issue Rules ---
 
@@ -39,14 +44,10 @@ bug:
 enhancement:
   - 'issues: ["^\\[Feature\\]"]'
 
-# Documentation requests (title contains [Docs] or [Doc])
-documentation:
-  - 'issues: ["(?i)\\[docs?\\]"]'
-
-# Questions (title starts with [Question])
+# Questions
 question:
   - 'issues: ["^\\[Question\\]"]'
 
-# Mark invalid if title contains [Invalid]
+# Invalid
 invalid:
   - 'issues: ["\\[Invalid\\]"]'
