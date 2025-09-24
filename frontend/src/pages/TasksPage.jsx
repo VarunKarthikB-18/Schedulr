@@ -142,9 +142,10 @@ export default function TasksPage() {
       switch (filters.sortBy) {
         case 'deadline':
           return new Date(a.deadline) - new Date(b.deadline);
-        case 'priority':
+        case 'priority': {
           const priorityOrder = { high: 3, medium: 2, low: 1 };
           return priorityOrder[b.priority] - priorityOrder[a.priority];
+        }
         case 'name':
           return a.name.localeCompare(b.name);
         case 'created':
