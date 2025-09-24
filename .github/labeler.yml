@@ -1,56 +1,111 @@
-# --- PR Rules ---
+# --- PR Rules ---# --- PR Rules ---
 
-# UI-related files → needs-screenshot
-needs-screenshot:
-  - any: ['**/*.css', '**/*.scss', '**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx', '**/*.html']
 
-# Enhancement / feature improvement
-enhancement:
-  - any: ['features/**', 'src/feature/**', 'src/components/**', '**/enhancement/**', '**/features/**']
 
-# Development files
-Development:
-  - any: ['**/src/**', '**/frontend/**', '**/backend/**', '**/components/**']
+# UI-related files → needs-screenshot# UI-related files → needs-screenshot
 
-# Level 2 = all enhancements
-"Level 2":
-  - any: ['features/**', 'src/feature/**', 'src/components/**']
+needs-screenshot:needs-screenshot:
 
-# Major work / new features
-major-work:
-  - any: ['src/core/**', 'server/**', 'api/**']
+  - any: ['**/*.css', '**/*.scss', '**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx', '**/*.html']  - any: ['**/*.css', '**/*.scss', '**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx', '**/*.html']
 
-# Level 3 = all major work
-"Level 3":
-  - any: ['src/core/**', 'server/**', 'api/**', '**/level3/**', '**/Level3/**']
 
-# Documentation changes
-documentation:
-  - any: ['**/*.md', 'docs/**', '**/docs/**', '**/documentation/**']
 
-# Bug-related paths
-bug:
-  - any: ['**/bug/**', '**/bugs/**']
+# Enhancement / feature improvement# Enhancement / feature improvement
 
-# Other labels
-duplicate:
-  - any: ['**/duplicate/**']
+enhancement:enhancement:
 
-"good first issue":
-  - any: ['**/good-first-issue/**']
+  - any: ['features/**', 'src/feature/**', 'src/components/**', '**/enhancement/**', '**/features/**']  - any: ['features/**', 'src/feature/**', 'src/components/**', '**/enhancement/**', '**/features/**']
 
-"help wanted":
-  - any: ['**/help-wanted/**']
 
-invalid:
-  - any: ['**/invalid/**']
 
-question:
-  - any: ['**/question/**', '**/questions/**']
+# Development files# Development files
 
-wontfix:
-  - any: ['**/wontfix/**']
+Development:Development:
 
-# GSSoC applied to all PRs
-"GSSoC'25":
-  - any: ['**/*']
+  - any: ['**/src/**', '**/frontend/**', '**/backend/**', '**/components/**']  - any: ['**/src/**', '**/frontend/**', '**/backend/**', '**/components/**']
+
+
+
+# Level 2 = all enhancements# Level 2 = all enhancements
+
+"Level 2":"Level 2":
+
+  - any: ['features/**', 'src/feature/**', 'src/components/**']  - any: ['features/**', 'src/feature/**', 'src/components/**']
+
+
+
+# Major work / new features# Major work / new features
+
+major-work:major-work:
+
+  - any: ['src/core/**', 'server/**', 'api/**']  - any: ['src/core/**', 'server/**', 'api/**']
+
+
+
+# Level 3 = all major work# Level 3 = all major work
+
+"Level 3":"Level 3":
+
+  - any: ['src/core/**', 'server/**', 'api/**', '**/level3/**', '**/Level3/**']  - any: ['src/core/**', 'server/**', 'api/**', '**/level3/**', '**/Level3/**']
+
+
+
+# Documentation changes# Documentation changes
+
+documentation:documentation:
+
+  - any: ['**/*.md', 'docs/**', '**/docs/**', '**/documentation/**']  - any: ['**/*.md', 'docs/**', '**/docs/**', '**/documentation/**']
+
+
+
+# Bug-related paths# Bug-related paths
+
+bug:bug:
+
+  - any: ['**/bug/**', '**/bugs/**']  - any: ['**/bug/**', '**/bugs/**']
+
+
+
+# Other labels# Other labels
+
+duplicate:duplicate:
+
+  - any: ['**/duplicate/**']  - any: ['**/duplicate/**']
+
+
+
+"good first issue":"good first issue":
+
+  - any: ['**/good-first-issue/**']  - any: ['**/good-first-issue/**']
+
+
+
+"help wanted":"help wanted":
+
+  - any: ['**/help-wanted/**']  - any: ['**/help-wanted/**']
+
+
+
+invalid:invalid:
+
+  - any: ['**/invalid/**']  - any: ['**/invalid/**']
+
+
+
+question:question:
+
+  - any: ['**/question/**', '**/questions/**']  - any: ['**/question/**', '**/questions/**']
+
+
+
+wontfix:wontfix:
+
+  - any: ['**/wontfix/**']  - any: ['**/wontfix/**']
+
+
+
+# GSSoC applied to all PRs# GSSoC applied to all PRs
+
+"GSSoC'25":"GSSoC'25":
+
+  - any: ['**/*']  - any: ['**/*']
