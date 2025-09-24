@@ -2,32 +2,19 @@
 
 # UI-related files → needs-screenshot
 needs-screenshot:
-  - '**/*.css'
-  - '**/*.scss'
-  - '**/*.js'
-  - '**/*.jsx'
-  - '**/*.ts'
-  - '**/*.tsx'
-  - '**/*.html'
+  - any: ['**/*.css', '**/*.scss', '**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx', '**/*.html']
 
 # Enhancement / feature improvement
 enhancement:
-  - 'features/**'
-  - 'src/feature/**'
-  - 'src/components/**'
-  - '**/enhancement/**'
-  - '**/features/**'
+  - any: ['features/**', 'src/feature/**', 'src/components/**', '**/enhancement/**', '**/features/**']
 
 # Development files
 Development:
-  - '**/src/**'
-  - '**/frontend/**'
-  - '**/backend/**'
-  - '**/components/**'
+  - any: ['**/src/**', '**/frontend/**', '**/backend/**', '**/components/**']
 
 # Level 2 = all enhancements
-Level 2:
-  - 'features/**'
+"Level 2":
+  - any: ['features/**']
   - 'src/feature/**'
   - 'src/components/**'
 
@@ -35,74 +22,43 @@ Level 2:
 major-work:
   - 'src/core/**'
   - 'server/**'
-  - 'api/**'
+  - any: ['src/feature/**', 'src/components/**']
+
+# Major work / new features
+major-work:
+  - any: ['src/core/**', 'server/**', 'api/**']
 
 # Level 3 = all major work
-Level 3:
-  - 'src/core/**'
-  - 'server/**'
-  - 'api/**'
-  - '**/level3/**'
-  - '**/Level3/**'
+"Level 3":
+  - any: ['src/core/**', 'server/**', 'api/**', '**/level3/**', '**/Level3/**']
 
 # Documentation changes
 documentation:
-  - '**/*.md'
-  - 'docs/**'
-  - '**/docs/**'
-  - '**/documentation/**'
+  - any: ['**/*.md', 'docs/**', '**/docs/**', '**/documentation/**']
 
 # Bug-related paths
 bug:
-  - '**/bug/**'
-  - '**/bugs/**'
+  - any: ['**/bug/**', '**/bugs/**']
 
 # Other labels
 duplicate:
-  - '**/duplicate/**'
+  - any: ['**/duplicate/**']
 
 "good first issue":
-  - '**/good-first-issue/**'
+  - any: ['**/good-first-issue/**']
 
 "help wanted":
-  - '**/help-wanted/**'
+  - any: ['**/help-wanted/**']
 
 invalid:
-  - '**/invalid/**'
+  - any: ['**/invalid/**']
 
 question:
-  - '**/question/**'
-  - '**/questions/**'
+  - any: ['**/question/**', '**/questions/**']
 
 wontfix:
-  - '**/wontfix/**'
+  - any: ['**/wontfix/**']
 
-# GSSoC applied to all PRs and issues
+# GSSoC applied to all PRs
 "GSSoC'25":
-  - '**/*'
-
-# --- Issue Rules ---
-
-# Bug reports → bug
-bug:
-  - 'issues: ["(?i)^\\[BUG\\]"]'
-
-# Feature requests → enhancement
-enhancement:
-  - 'issues: ["(?i)^\\[Feature\\]"]'
-
-# Questions
-question:
-  - 'issues: ["(?i)^\\[Question\\]"]'
-
-# Documentation issues
-documentation:
-  - 'issues: ["(?i)\\[docs?\\]"]'
-
-# Invalid
-invalid:
-  - 'issues: ["(?i)\\[Invalid\\]"]'
-
-# GSSoC applied to all issues
-"GSSoC'25":
-  - 'issues: ["^.*$"]'
+  - any: ['**/*']
