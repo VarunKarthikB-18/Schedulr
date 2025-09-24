@@ -7,24 +7,24 @@ body:
     attributes:
       label: What happened?
       description: Describe the problem in a few words.
-      placeholder: "The app crashed when I clicked ..."
+      placeholder: "The app crashed when I clicked the login button."
     validations:
       required: true
 
   - type: textarea
-    id: steps
+    id: steps_to_reproduce
     attributes:
       label: How to see it happen
-      description: Step-by-step instructions to reproduce the bug.
-      placeholder: "1. Go to ...\n2. Click ...\n3. See the problem"
+      description: Step-by-step instructions to reproduce the problem.
+      placeholder: "1. Open the app\n2. Click login\n3. See the error"
     validations:
       required: true
 
   - type: textarea
-    id: expected
+    id: expected_behavior
     attributes:
       label: What you expected
-      description: What should have happened.
+      description: Explain what should have happened instead.
       placeholder: "The page should load normally."
     validations:
       required: false
@@ -33,7 +33,16 @@ body:
     id: screenshot
     attributes:
       label: Screenshot (optional)
-      description: Add a screenshot if it helps explain the problem.
-      placeholder: "Drag and drop images here."
+      description: Drag and drop a screenshot if it helps explain the problem.
+      placeholder: "Add a screenshot here"
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional_info
+    attributes:
+      label: Anything else?
+      description: Any extra information like browser, device, or error messages.
+      placeholder: "Chrome, Windows 11, error message XYZ"
     validations:
       required: false
