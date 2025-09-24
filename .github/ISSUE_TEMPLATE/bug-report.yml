@@ -3,13 +3,11 @@ title: "[BUG] "
 labels: bug
 body:
   - type: textarea
-    id: bug_description
-    attributes:
-      label: What happened?
-      description: Tell us in a few words what went wrong.
-      placeholder: "The app crashed when I clicked login."
-    validations:
-      required: true
+    - type: textarea
+  attributes:
+    label: "Describe the bug"
+    description: "Tell us what you saw. This will be shown as a hint."
+    placeholder: "When I clicked login, the app crashed."
 
   - type: textarea
     id: steps
