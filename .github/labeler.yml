@@ -14,15 +14,7 @@ Development:
 
 # Level 2 = all enhancements
 "Level 2":
-  - any: ['features/**']
-  - 'src/feature/**'
-  - 'src/components/**'
-
-# Major work / new features
-major-work:
-  - 'src/core/**'
-  - 'server/**'
-  - any: ['src/feature/**', 'src/components/**']
+  - any: ['features/**', 'src/feature/**', 'src/components/**']
 
 # Major work / new features
 major-work:
