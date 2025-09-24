@@ -1,54 +1,80 @@
-# For Pull Requests: label by file pattern
+# for Keywords and other
 bug:
-  - any: ["src/**/bug*", "**/bug*"]
-documentation:
-  - any: ["docs/**", "**/*.md"]
-enhancement:
-  - any: ["src/**/feature*", "**/feature*"]
-good first issue:
-  - any: ["good-first-issue/**", "**/good-first-issue*"]
-help wanted:
-  - any: ["help-wanted/**", "**/help-wanted*"]
+  any: 
+    - "src/**/bug*"
+    - "**/bug*"
+  keywords:
+    - "bug"
+    - "crash"
+    - "error"
+    - "not working"
 
-# For Issues: label by keyword in title/body
-bug:
-  - "bug"
-  - "crash"
-  - "error"
-  - "not working"
 documentation:
-  - "documentation"
-  - "docs"
-  - "readme"
+  any: 
+    - "docs/**"
+    - "**/*.md"
+  keywords:
+    - "documentation"
+    - "docs"
+    - "readme"
+
 enhancement:
-  - "feature"
-  - "enhancement"
-  - "improve"
-  - "add"
+  any: 
+    - "src/**/feature*"
+    - "**/feature*"
+  keywords:
+    - "feature"
+    - "enhancement"
+    - "improve"
+    - "add"
+
 good first issue:
-  - "good first issue"
-  - "beginner"
-  - "easy"
+  any: 
+    - "good-first-issue/**"
+    - "**/good-first-issue*"
+  keywords:
+    - "good first issue"
+    - "beginner"
+    - "easy"
+
 help wanted:
-  - "help"
-  - "support"
-  - "wanted"
+  any: 
+    - "help-wanted/**"
+    - "**/help-wanted*"
+  keywords:
+    - "help"
+    - "support"
+    - "wanted"
+
 invalid:
-  - "invalid"
-  - "not valid"
+  keywords:
+    - "invalid"
+    - "not valid"
+
 question:
-  - "question"
-  - "how"
-  - "what"
+  keywords:
+    - "question"
+    - "how"
+    - "what"
+
 duplicate:
-  - "duplicate"
-  - "already exists"
+  keywords:
+    - "duplicate"
+    - "already exists"
+
 Level 1:
-  - "level 1"
+  keywords:
+    - "level 1"
+
 Level 2:
-  - "level 2"
+  keywords:
+    - "level 2"
+
 Level3:
-  - "level 3"
+  keywords:
+    - "level 3"
+
 wontfix:
-  - "wontfix"
-  - "will not fix"
+  keywords:
+    - "wontfix"
+    - "will not fix"
