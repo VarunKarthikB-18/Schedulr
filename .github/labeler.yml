@@ -1,24 +1,71 @@
-bug:
-  - 'bug'
+# --- PR Rules ---
+
+# UI-related files → needs-screenshot
+needs-screenshot:
+  - '**/*.css'
+  - '**/*.scss'
+  - '**/*.js'
+  - '**/*.jsx'
+  - '**/*.ts'
+  - '**/*.tsx'
+  - '**/*.html'
+
+# Enhancement / feature improvement
+enhancement:
+  - 'features/**'
+  - 'src/feature/**'
+  - 'src/components/**'
+
+# Level 2 = all enhancements
+Level 2:
+  - 'features/**'
+  - 'src/feature/**'
+  - 'src/components/**'
+
+# Major work / new features
+major-work:
+  - 'src/core/**'
+  - 'server/**'
+  - 'api/**'
+
+# Level 3 = all major work
+Level 3:
+  - 'src/core/**'
+  - 'server/**'
+  - 'api/**'
+
+# Documentation changes
 documentation:
   - '**/*.md'
-duplicate:
-  - 'duplicate'
+  - 'docs/**'
+
+# GSSoC applied to all PRs
+"GSSoC'25":
+  - '**/*'
+
+
+# --- Issue Rules ---
+
+# Bug reports → bug
+bug:
+  - 'issues: ["(?i)^\\[BUG\\]"]'
+
+# Feature requests → enhancement
 enhancement:
-  - 'enhancement'
-good first issue:
-  - 'good first issue'
-GSSoC25:
-  - "GSSoC'25"
-help wanted:
-  - 'help wanted'
-invalid:
-  - 'invalid'
-Level3:
-  - 'Level 3'
+  - 'issues: ["(?i)^\\[Feature\\]"]'
+
+# Questions
 question:
-  - 'question'
-wontfix:
-  - 'wontfix'
-Development:
-  - 'development'
+  - 'issues: ["(?i)^\\[Question\\]"]'
+
+# Documentation issues
+documentation:
+  - 'issues: ["(?i)\\[docs?\\]"]'
+
+# Invalid
+invalid:
+  - 'issues: ["(?i)\\[Invalid\\]"]'
+
+# GSSoC applied to all issues
+"GSSoC'25":
+  - 'issues: ["^.*$"]'
