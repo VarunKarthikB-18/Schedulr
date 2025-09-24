@@ -9,7 +9,7 @@ body:
       description: Briefly describe the feature you want.
       placeholder: "Add a dark mode option for the app."
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: why_needed
