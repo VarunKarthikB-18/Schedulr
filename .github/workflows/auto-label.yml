@@ -29,7 +29,8 @@ jobs:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
           configuration-path: .github/labeler.yml
           sync-labels: true
-          enable-versioned-regex: false
+          enable-versioned-regex: true
+      # Always add 'GSSoC'25' to Issues
       - name: Add GSSoC'25 label to Issue
         uses: actions-ecosystem/action-add-labels@v1
         with:
