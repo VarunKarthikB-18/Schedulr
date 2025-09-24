@@ -1,24 +1,39 @@
----
-name: "🐞 Bug Report"
-about: Report a bug or problem
+name: Bug Report
 title: "[BUG] "
 labels: bug
----
+body:
+  - type: textarea
+    id: bug_description
+    attributes:
+      label: What happened?
+      description: Describe the problem in a few words.
+      placeholder: "The app crashed when I clicked ..."
+    validations:
+      required: true
 
-## What happened?
-Write in a few words what went wrong.
+  - type: textarea
+    id: steps
+    attributes:
+      label: How to see it happen
+      description: Step-by-step instructions to reproduce the bug.
+      placeholder: "1. Go to ...\n2. Click ...\n3. See the problem"
+    validations:
+      required: true
 
-## How to see it happen
-Steps to check the problem:
-1. Go to ...
-2. Click ...
-3. See the problem
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+      description: What should have happened.
+      placeholder: "The page should load normally."
+    validations:
+      required: false
 
-## What you expected
-What should have happened?
-
-## Screenshot (if possible)
-Drag and drop a picture if it helps explain the problem.
-
-## Anything else to tell us?
-Add any extra info, like which device or browser you used.
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot (optional)
+      description: Add a screenshot if it helps explain the problem.
+      placeholder: "Drag and drop images here."
+    validations:
+      required: false
