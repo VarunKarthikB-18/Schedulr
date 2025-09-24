@@ -1,6 +1,6 @@
-# --- Pull Request Rules ---
+# --- PR Rules ---
 
-# Screenshot reminder for UI-related changes
+# UI-related files → needs-screenshot
 needs-screenshot:
   - '**/*.css'
   - '**/*.scss'
@@ -10,15 +10,17 @@ needs-screenshot:
   - '**/*.tsx'
   - '**/*.html'
 
-# Documentation changes
-documentation:
-  - '**/*.md'
-  - 'docs/**'
-
-# Enhancements / feature improvements
+# Enhancement / feature improvement
 enhancement:
   - 'features/**'
   - 'src/feature/**'
+  - 'src/components/**'
+
+# Level 2 = all enhancements
+Level 2:
+  - 'features/**'
+  - 'src/feature/**'
+  - 'src/components/**'
 
 # Major work / new features
 major-work:
@@ -26,28 +28,44 @@ major-work:
   - 'server/**'
   - 'api/**'
 
-# Assign levels based on type of work
-Level 1:
-  - 'pull_request:labels:documentation'
-Level 2:
-  - 'pull_request:labels:enhancement'
+# Level 3 = all major work
 Level 3:
-  - 'pull_request:labels:major-work'
+  - 'src/core/**'
+  - 'server/**'
+  - 'api/**'
+
+# Documentation changes
+documentation:
+  - '**/*.md'
+  - 'docs/**'
+
+# GSSoC applied to all PRs
+"GSSoC'25":
+  - '**/*'
+
 
 # --- Issue Rules ---
 
-# Bug reports (title starts with [BUG])
+# Bug reports → bug
 bug:
-  - 'issues: ["^\\[BUG\\]"]'
+  - 'issues: ["(?i)^\\[BUG\\]"]'
 
-# Feature requests (title starts with [Feature])
+# Feature requests → enhancement
 enhancement:
-  - 'issues: ["^\\[Feature\\]"]'
+  - 'issues: ["(?i)^\\[Feature\\]"]'
 
 # Questions
 question:
-  - 'issues: ["^\\[Question\\]"]'
+  - 'issues: ["(?i)^\\[Question\\]"]'
+
+# Documentation issues
+documentation:
+  - 'issues: ["(?i)\\[docs?\\]"]'
 
 # Invalid
 invalid:
-  - 'issues: ["\\[Invalid\\]"]'
+  - 'issues: ["(?i)\\[Invalid\\]"]'
+
+# GSSoC applied to all issues
+"GSSoC'25":
+  - 'issues: ["^.*$"]'
