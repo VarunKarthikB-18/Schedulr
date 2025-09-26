@@ -65,8 +65,8 @@ export default function TaskForm({ task, onSave, onCancel }) {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-lg shadow-xl w-full max-w-md">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 scrollbar-hide">
+      <div className="mt-6 max-h-[100vh] bg-white rounded-lg shadow-xl w-full max-w-md overflow-y-scroll scrollbar-hide">
         <div className="p-6">
           <h2 className="text-xl font-semibold text-gray-800 mb-4">
             {task ? 'Edit Task' : 'Add New Task'}
