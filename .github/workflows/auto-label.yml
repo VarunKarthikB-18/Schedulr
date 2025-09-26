@@ -5,12 +5,13 @@ on:
     types: [opened, synchronize, reopened]
 
 jobs:
-  label:
+  labeler:
     runs-on: ubuntu-latest
     permissions:
       contents: read
       pull-requests: write
     steps:
-      - uses: actions/labeler@v5
+      - name: Apply labels based on file changes
+        uses: actions/labeler@v5
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
