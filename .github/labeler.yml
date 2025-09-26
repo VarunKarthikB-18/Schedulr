@@ -16,7 +16,7 @@ Development:
 "Level 1":
   - any: ['**/level1/**', '**/Level1/**']
 
-# Level 2 = all enhancements  
+# Level 2 = all enhancements
 "Level 2":
   - any: ['features/**', 'src/feature/**', 'src/components/**']
 
