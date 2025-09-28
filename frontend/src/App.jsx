@@ -10,7 +10,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gray-100 flex">
       <Sidebar />
-      <main className="flex-1 p-10">
+      <main className="flex-1 p-10 ml-44 peer-hover:ml-64  transition-all h-screen duration-300">
         <Routes>
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
           <Route path="/dashboard" element={<DashboardPage />} />
