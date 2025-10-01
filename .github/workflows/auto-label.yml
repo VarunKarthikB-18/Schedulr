@@ -3,8 +3,6 @@ name: "Auto Labeler"
 on:
   pull_request:
     types: [opened, synchronize, reopened]
-  issues:
-    types: [opened, edited, reopened]
 
 jobs:
   labeler:
@@ -12,7 +10,6 @@ jobs:
     permissions:
       contents: read
       pull-requests: write
-      issues: write
     steps:
       - name: Apply labels based on file changes
         uses: actions/labeler@v5
@@ -26,19 +23,19 @@ jobs:
           labels: "GSSoC'25"
 
   issue-labeler:
+    if: github.event_name == 'issues'
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
     steps:
-      - uses: github/issue-labeler@v5
+      - uses: actions/labeler@v5
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
           configuration-path: .github/labeler.yml
           sync-labels: true
           enable-versioned-regex: true
-
+      # Always add 'GSSoC'25' to Issues
       - name: "Add GSSoC'25 label to Issue"
         uses: actions-ecosystem/action-add-labels@v1.1.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           labels: "GSSoC'25"
+=======
