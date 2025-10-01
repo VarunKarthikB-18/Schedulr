@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import { useTaskContext } from '../contexts/TaskContext.jsx';
+import { useTaskContext } from '../hooks/useTaskContext.js';
 
 function Tabs({ view, setView }) {
   return (

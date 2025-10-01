@@ -1,63 +1,6 @@
-import { createContext, useContext, useState } from 'react';
-
-const TaskContext = createContext();
-
-export const useTaskContext = () => {
-  const context = useContext(TaskContext);
-  if (!context) {
-    throw new Error('useTaskContext must be used within a TaskProvider');
-  }
-  return context;
-};
-
-// Utility functions for recurring tasks
-const generateRecurringInstances = (recurringTask, maxInstances = 10) => {
-  const instances = [];
-  const startDate = new Date(recurringTask.deadline);
-  const endDate = recurringTask.recurrence.endDate ? new Date(recurringTask.recurrence.endDate) : null;
-  const { type, interval } = recurringTask.recurrence;
-  
-  let currentDate = new Date(startDate);
-  let instanceCount = 0;
-  
-  while (instanceCount < maxInstances) {
-    // Check if we've reached the end date
-    if (endDate && currentDate > endDate) break;
-    
-    // Create instance
-    const instance = {
-      ...recurringTask,
-      id: `${recurringTask.id}_instance_${instanceCount}`,
-      deadline: currentDate.toISOString().split('T')[0],
-      isInstance: true,
-      parentId: recurringTask.id,
-      instanceNumber: instanceCount + 1,
-      status: 'pending' // Reset status for new instances
-    };
-    
-    instances.push(instance);
-    
-    // Calculate next occurrence
-    switch (type) {
-      case 'daily':
-        currentDate.setDate(currentDate.getDate() + interval);
-        break;
-      case 'weekly':
-        currentDate.setDate(currentDate.getDate() + (interval * 7));
-        break;
-      case 'monthly':
-        currentDate.setMonth(currentDate.getMonth() + interval);
-        break;
-      case 'yearly':
-        currentDate.setFullYear(currentDate.getFullYear() + interval);
-        break;
-    }
-    
-    instanceCount++;
-  }
-  
-  return instances;
-};
+import { useState } from 'react';
+import { TaskContext } from './taskContext.js';
+import { generateRecurringInstances } from '../utils/taskUtils.js';
 
 export const TaskProvider = ({ children }) => {
   const [tasks, setTasks] = useState([
@@ -156,57 +99,12 @@ export const TaskProvider = ({ children }) => {
     }
   };
 
-  // Helper functions for different views
-  const getTasksForDate = (date) => {
-    const dateStr = date instanceof Date ? date.toISOString().split('T')[0] : date;
-    return tasks.filter(task => task.deadline === dateStr);
-  };
-
-  const getTasksForWeek = (weekStartDate) => {
-    const weekStart = new Date(weekStartDate);
-    const weekEnd = new Date(weekStart);
-    weekEnd.setDate(weekEnd.getDate() + 6);
-    
-    return tasks.filter(task => {
-      const taskDate = new Date(task.deadline);
-      return taskDate >= weekStart && taskDate <= weekEnd;
-    });
-  };
-
-  const getUpcomingTasks = (limit = 10) => {
-    const today = new Date().toISOString().split('T')[0];
-    return tasks
-      .filter(task => task.deadline >= today && task.status !== 'completed')
-      .sort((a, b) => new Date(a.deadline) - new Date(b.deadline))
-      .slice(0, limit);
-  };
-
-  const getOverdueTasks = () => {
-    const today = new Date().toISOString().split('T')[0];
-    return tasks.filter(task => task.deadline < today && task.status !== 'completed');
-  };
-
-  const getTaskStats = () => {
-    return {
-      total: tasks.length,
-      pending: tasks.filter(t => t.status === 'pending').length,
-      inProgress: tasks.filter(t => t.status === 'in-progress').length,
-      completed: tasks.filter(t => t.status === 'completed').length,
-      overdue: getOverdueTasks().length
-    };
-  };
-
   const contextValue = {
     tasks,
     addTask,
     updateTask,
     deleteTask,
     toggleTaskStatus,
-    getTasksForDate,
-    getTasksForWeek,
-    getUpcomingTasks,
-    getOverdueTasks,
-    getTaskStats,
     setTasks
   };
 

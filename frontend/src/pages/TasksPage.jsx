@@ -2,7 +2,7 @@ import { useState } from 'react';
 import TaskItem from '../components/TaskItem.jsx';
 import TaskForm from '../components/TaskForm.jsx';
 import TaskFilter from '../components/TaskFilter.jsx';
-import { useTaskContext } from '../contexts/TaskContext.jsx';
+import { useTaskContext } from '../hooks/useTaskContext.js';
 
 export default function TasksPage() {
   const { 

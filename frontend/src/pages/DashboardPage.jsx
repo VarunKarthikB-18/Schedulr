@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import Hero from "../components/Hero.jsx";
-import { useTaskContext } from '../contexts/TaskContext.jsx';
+import { useTaskContext } from '../hooks/useTaskContext.js';
 
 export default function DashboardPage() {
   const { getUpcomingTasks, getOverdueTasks, getTaskStats, getTasksForDate } = useTaskContext();

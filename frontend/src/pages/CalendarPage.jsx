@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Calendar from "../components/Calendar.jsx";
-import { useTaskContext } from '../contexts/TaskContext.jsx';
+import { useTaskContext } from '../hooks/useTaskContext.js';
 
 export default function CalendarPage() {
   const { tasks, getUpcomingTasks, getTasksForDate, toggleTaskStatus } = useTaskContext();

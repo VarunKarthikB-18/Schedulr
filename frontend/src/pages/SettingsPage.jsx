@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
-import { useSettings } from '../contexts/SettingsContext.jsx';
-import { useTaskContext } from '../contexts/TaskContext.jsx';
+import { useSettings } from '../hooks/useSettings.js';
+import { useTaskContext } from '../hooks/useTaskContext.js';
 
 export default function SettingsPage() {
   const { settings, updateSetting, resetSettings, exportSettings, importSettings } = useSettings();
