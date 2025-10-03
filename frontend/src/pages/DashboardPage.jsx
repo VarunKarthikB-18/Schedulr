@@ -177,7 +177,7 @@ export default function DashboardPage() {
       {/* Quick Actions */}
       <div className="bg-white rounded-lg shadow p-6">
         <h3 className="text-lg font-semibold text-gray-800 mb-4">Quick Actions</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <button 
             onClick={() => navigate('/tasks')}
             className="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-left"
@@ -203,6 +203,15 @@ export default function DashboardPage() {
             <div className="mb-2"><img width="48" height="48" src="https://img.icons8.com/color/48/overtime.png" alt="overtime"/></div>
             <h4 className="font-medium text-gray-800">Plan Schedule</h4>
             <p className="text-sm text-gray-500">Organize your day and week</p>
+          </button>
+          
+          <button 
+            onClick={() => navigate('/settings')}
+            className="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-left"
+          >
+            <div className="mb-2"><img width="48" height="48" src="https://img.icons8.com/color/48/settings--v1.png" alt="settings--v1"/></div>
+            <h4 className="font-medium text-gray-800">Settings</h4>
+            <p className="text-sm text-gray-500">Configure your preferences</p>
           </button>
         </div>
       </div>
