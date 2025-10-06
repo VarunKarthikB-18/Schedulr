@@ -18,10 +18,10 @@ const ProtectedRoute = ({ children }) => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: 'var(--bg)' }}>
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading...</p>
+          <p className="mt-4" style={{ color: 'var(--muted)' }}>Loading...</p>
         </div>
       </div>
     );
@@ -36,10 +36,10 @@ const PublicRoute = ({ children }) => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: 'var(--bg)' }}>
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Loading...</p>
+          <p className="mt-4" style={{ color: 'var(--muted)' }}>Loading...</p>
         </div>
       </div>
     );
@@ -50,7 +50,7 @@ const PublicRoute = ({ children }) => {
 
 function AppContent() {
   return (
-    <div className="min-h-screen bg-gray-100 flex">
+    <div className="min-h-screen flex" style={{ backgroundColor: 'var(--bg)' }}>
       <Sidebar />
       <main className="flex-1 p-10 ml-44 peer-hover:ml-64 transition-all h-screen duration-300">
         <Routes>

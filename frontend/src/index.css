@@ -2,7 +2,150 @@
 
 /* Global resets and app theming */
 :root {
+  --bg: #ffffff;
+  --surface: #f8fafc; /* gray-50 */
+  --muted: #6b7280; /* gray-500 */
+  --text: #111827; /* gray-900 */
   color-scheme: light;
+}
+
+/* Dark theme overrides. We support both .dark class and [data-theme="dark"] attribute */
+:root.dark,
+html[data-theme="dark"]:root {
+  --bg: #0f172a; /* gray-900 */
+  --surface: #0b1220; /* slightly lighter surface */
+  --muted: #9ca3af; /* gray-400 */
+  --text: #e5eef8; /* light text */
+  color-scheme: dark;
+}
+
+/* Utility overrides for common Tailwind classes in dark mode so components using
+   tailwind utilities still look correct without converting every component.
+   We apply both .dark and [data-theme="dark"] selectors to be robust. */
+:root.dark .bg-white,
+html[data-theme="dark"] .bg-white {
+  background-color: var(--surface) !important;
+}
+
+:root.dark .bg-gray-50,
+html[data-theme="dark"] .bg-gray-50 {
+  background-color: rgba(255,255,255,0.02) !important;
+}
+
+:root.dark .bg-gray-100,
+html[data-theme="dark"] .bg-gray-100 {
+  background-color: rgba(255,255,255,0.03) !important;
+}
+
+:root.dark .text-gray-800,
+html[data-theme="dark"] .text-gray-800 {
+  color: var(--text) !important;
+}
+
+:root.dark .text-gray-700,
+html[data-theme="dark"] .text-gray-700,
+:root.dark .text-gray-600,
+html[data-theme="dark"] .text-gray-600 {
+  color: var(--muted) !important;
+}
+
+:root.dark .text-gray-500,
+html[data-theme="dark"] .text-gray-500,
+:root.dark .text-gray-400,
+html[data-theme="dark"] .text-gray-400 {
+  color: rgba(255,255,255,0.7) !important;
+}
+
+:root.dark .border-gray-200,
+html[data-theme="dark"] .border-gray-200 {
+  border-color: rgba(255,255,255,0.06) !important;
+}
+
+:root.dark .hover\:bg-gray-100:hover,
+html[data-theme="dark"] .hover\:bg-gray-100:hover {
+  background-color: rgba(255,255,255,0.03) !important;
+}
+
+/* Ensure icons and svgs inherit readable color in dark mode */
+:root.dark svg,
+html[data-theme="dark"] svg {
+  color: var(--text);
+}
+
+/* Colored badge backgrounds & text adjustments for dark mode */
+:root.dark .bg-green-100,
+html[data-theme="dark"] .bg-green-100 {
+  background-color: rgba(16,185,129,0.12) !important; /* tailwind green-500 @ low alpha */
+}
+:root.dark .bg-green-200,
+html[data-theme="dark"] .bg-green-200 {
+  background-color: rgba(16,185,129,0.16) !important;
+}
+:root.dark .text-green-800,
+html[data-theme="dark"] .text-green-800 {
+  color: #86efac !important; /* lighter green for contrast */
+}
+
+:root.dark .bg-yellow-100,
+html[data-theme="dark"] .bg-yellow-100 {
+  background-color: rgba(250,204,21,0.10) !important; /* subtle yellow */
+}
+:root.dark .text-yellow-800,
+html[data-theme="dark"] .text-yellow-800 {
+  color: #fef3c7 !important; /* readable pale yellow */
+}
+
+:root.dark .bg-red-100,
+html[data-theme="dark"] .bg-red-100 {
+  background-color: rgba(239,68,68,0.10) !important;
+}
+:root.dark .text-red-800,
+html[data-theme="dark"] .text-red-800 {
+  color: #fca5a5 !important;
+}
+
+:root.dark .bg-purple-100,
+html[data-theme="dark"] .bg-purple-100 {
+  background-color: rgba(139,92,246,0.07) !important;
+}
+:root.dark .ring-purple-300,
+html[data-theme="dark"] .ring-purple-300 {
+  box-shadow: 0 0 0 3px rgba(139,92,246,0.12) !important;
+}
+
+:root.dark .hover\:bg-blue-50:hover,
+html[data-theme="dark"] .hover\:bg-blue-50:hover {
+  background-color: rgba(59,130,246,0.06) !important;
+}
+
+/* Calendar specific: day number style (ensure readability on colored cells) */
+:root.dark .grid.grid-cols-7 .h-12 span,
+html[data-theme="dark"] .grid.grid-cols-7 .h-12 span {
+  color: var(--text) !important; /* ensure day numbers are readable on any cell */
+}
+
+/* Weekday headers */
+:root.dark .grid.grid-cols-7 .h-10 span,
+html[data-theme="dark"] .grid.grid-cols-7 .h-10 span {
+  color: var(--muted) !important;
+}
+
+/* Badges that use light colored backgrounds (green/yellow/red/purple): ensure their text has contrast */
+:root.dark .bg-green-100,
+html[data-theme="dark"] .bg-green-100 {
+  color: #bbf7d0 !important;
+}
+:root.dark .bg-yellow-100,
+html[data-theme="dark"] .bg-yellow-100 {
+  color: #fff7cc !important;
+}
+:root.dark .bg-red-100,
+html[data-theme="dark"] .bg-red-100 {
+  color: #fecaca !important;
+}
+:root.dark .bg-purple-100,
+html[data-theme="dark"] .bg-purple-100 {
+  color: #e9d5ff !important;
 }
 
 html,
@@ -14,6 +157,8 @@ body,
 
 body {
   margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
